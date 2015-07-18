@@ -1,0 +1,10 @@
+/.bundle
+/server.sh
+/README.rdoc
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*.log
+/tmp
+/server-development.sh
+/server-production.sh
+/Production.install
