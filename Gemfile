@@ -2,7 +2,7 @@ rails_version = ENV["RAILS_VERSION"] || "default"
 
 rails = case rails_version
 when "default"
-  "~> 4.2.2"
+  "~> 4.2.4"
 else
   "~> #{rails_version}"
 end

@@ -1,4 +1,20 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 25) do
+
+# Could not dump table "agencies" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -16,16 +32,16 @@ ActiveRecord::Schema.define(version: 25) do
   create_table "microposts", force: :cascade do |t|
     t.string   "author"
     t.string   "email"
-    t.text     "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "review",     limit: 999
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "orders", force: :cascade do |t|
     t.string   "odd"
     t.string   "mark"
     t.date     "order_day"
-    t.string   "country", default: "UA", null: false
+    t.string   "country",           default: "UA", null: false
     t.date     "tour_day_begin"
     t.date     "tour_day_end"
     t.integer  "night"
@@ -63,116 +79,13 @@ ActiveRecord::Schema.define(version: 25) do
     t.string   "paid_currency"
     t.integer  "debt"
     t.string   "debt_currency"
-    t.integer  "tourist_id", null: false
+    t.integer  "tourist_id",                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "orders", ["tourist_id"], name: "index_orders_on_tourist_id", unique: true
-
-  create_table "tourists", force: true do |t|
-    t.string   "client"
-    t.string   "lastname_ua"
-    t.string   "firstname_ua"
-    t.string   "middlename_ua"
-    t.string   "lastname_en"
-    t.string   "firstname_en"
-    t.date     "day_born"
-    t.string   "gender"
-    t.string   "add_lastname_en_one"
-    t.string   "add_firstname_en_one"
-    t.string   "add_passport_one"
-    t.date     "add_day_born_one"
-    t.integer  "add_phone_one"
-    t.string   "add_lastname_en_two"
-    t.string   "add_firstname_en_two"
-    t.string   "add_passport_two"
-    t.date     "add_day_born_two"
-    t.integer  "add_phone_two"
-    t.string   "add_lastname_en_three"
-    t.string   "add_firstname_en_three"
-    t.string   "add_passport_three"
-    t.date     "add_day_born_three"
-    t.integer  "add_phone_three"
-    t.string   "add_lastname_en_four"
-    t.string   "add_firstname_en_four"
-    t.string   "add_passport_four"
-    t.date     "add_day_born_four"
-    t.integer  "add_phone_four"
-    t.string   "add_lastname_en_five"
-    t.string   "add_firstname_en_five"
-    t.string   "add_passport_five"
-    t.date     "add_day_born_five"
-    t.integer  "add_phone_five"
-    t.string   "country"
-    t.string   "foreign_suite"
-    t.integer  "foreign_number"
-    t.date     "foreign_day_issue"
-    t.integer  "issued_by"
-    t.date     "validity"
-    t.string   "city"
-    t.string   "street"
-    t.integer  "post_index"
-    t.string   "house"
-    t.integer  "apartment"
-    t.integer  "phone_mobile"
-    t.integer  "phone_home"
-    t.integer  "phone_work"
-    t.string   "email"
-    t.string   "skype"
-    t.text     "comment"
-    t.string   "client_status"
-    t.string   "learned_from"
-    t.integer  "msg_sms"
-    t.integer  "msg_mail"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.date     "add_passport_day_issue_one"
-    t.date     "add_passport_day_issue_two"
-    t.date     "add_passport_day_issue_three"
-    t.date     "add_passport_day_issue_four"
-    t.date     "add_passport_day_issue_five"
-    t.date     "add_passport_validity_one"
-    t.date     "add_passport_validity_two"
-    t.date     "add_passport_validity_three"
-    t.date     "add_passport_validity_four"
-    t.date     "add_passport_validity_five"
-    t.integer  "add_issued_by_one"
-    t.integer  "add_issued_by_two"
-    t.integer  "add_issued_by_three"
-    t.integer  "add_issued_by_four"
-    t.integer  "add_issued_by_five"
-  end
-
-  create_table "agencies", force: true do |t|
-    t.string   "agency_name"
-    t.integer  "agency_pn"
-    t.integer  "agency_edrpoy"
-    t.string   "agency_city"
-    t.string   "agency_street"
-    t.integer  "agency_post_index"
-    t.string   "agency_house"
-    t.integer  "agency_apart"
-    t.string   "city_legal"
-    t.string   "street_legal"
-    t.integer  "post_index_legal"
-    t.string   "house_legal"
-    t.integer  "apart_legal"
-    t.integer  "agency_phone_work"
-    t.integer  "agency_phone_mobile"
-    t.string   "agency_email_one"
-    t.string   "agency_email_two"
-    t.string   "agency_email_three"
-    t.string   "agency_web"
-    t.string   "agency_comment"
-    t.string   "bank"
-    t.integer  "mfo"
-    t.integer  "account"
-    t.string   "contract_number"
-    t.date     "contract_from"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "tourists" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                        limit: 255,             null: false
@@ -184,7 +97,7 @@ ActiveRecord::Schema.define(version: 25) do
     t.datetime "last_logout_at"
     t.datetime "last_activity_at"
     t.string   "last_login_from_ip_address",   limit: 255
-    t.integer  "failed_logins_count",          default: 0
+    t.integer  "failed_logins_count",                      default: 0
     t.datetime "lock_expires_at"
     t.string   "unlock_token",                 limit: 255
     t.string   "username",                     limit: 255
