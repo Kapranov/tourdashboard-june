@@ -8,4 +8,4 @@ Tourdashboard - billing system for Travel Agency
 
 ![tourdashboard](/tourdashboard.jpg "Live Demo")
 
-#### 18 july 2015@Oleg G.Kapranov
+#### 22 Dec 2015 Oleg G.Kapranov
